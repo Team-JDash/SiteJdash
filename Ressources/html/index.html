@@ -1,7 +1,6 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="iso-8859-1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +12,10 @@
     
     <!-- Bootstrap core CSS -->
       <link href="../css/bootstrap.min.css" rel="stylesheet" />
+      <link href="../css/ac.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
       <link href="../css/justified-nav.css" rel="stylesheet" />
-      <link href="../css/addPlugin.css" rel="stylesheet" />
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="ressources/js/ie-emulation-modes-warning.js"></script>
@@ -30,17 +30,17 @@
 
   <body>
 
-    <div class="container">
+    <div class="container" style="background-color:whitesmoke;">
         <!-- CONNEXION BAAAAR -->
       <div class="masthead">
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="index.html">Accueil</a></li>
+              <li class="active"><a href="index.html">Accueil</a></li>
             <li><a href="jdash.html">Jdash</a></li>
-            <li><a href="inscription.html">S'inscrire</a></li>
+            <li><a href="inscription.html" class="inscription">S'inscrire</a></li>
             <li><a href="connexion.html">Se connecter</a></li>
             <li><a href="download.html">Downloads</a></li>
-            <li class="active"><a href="plugin.html">Les plug-ins</a></li>
+            <li><a href="plugin.html">Les plug-ins</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -50,44 +50,41 @@
 
 
       <!-- Jumbotron -->
-      <div class="jumbotron" style="background-color:whitesmoke;">
-        <h3><u><em>Ajouter votre plug-in</em></u></h3>
+      <div class="jumbotron">
+        <h1>Jdash! c'est plus fort que toi !!! </h1><img src="../images/logo.png" />
+        <p class="lead">Page de garde pour l'application Jdash, projet réalisé dans le cadre de projet de fin d'étude de troisième année.</p>
+        <p><a class="btn btn-lg btn-success" href="jdash.html" role="button">&#8658; Commence ici &#8656;</a></p>
+          
+      </div>
 
-          <p >Cette page permet aux utilisateurs de l'application Jdash de partager leurs plugins Java.</p>
-			   
-          <br /><br />
-              
-                <div class="row">
-  <div class="col-sm-4">
-      <input class="form-control" name="Nom" placeholder="Nom" required="" type="text"><br /><br />
-      <input class="form-control" name="prenom" placeholder="pr&eacute;nom" type="text" ><br /><br /><br />
-      <input class="form-control" name="email" placeholder="Email" required="" type="email"><br /><br /><br />
+      <!-- search -->
+      <div class="center-block">
+        <form class="form-inline">
+          <div class="form-group">
+            
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="text" class="form-control" id="exampleInputAmount" placeholder="ex: météo, facebook, ...">           
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">chercher</button>
+        </form>
+      </div>
 
-					 </div>
-  <div class="col-sm-4"><textarea class="form-control" placeholder="Inserez la description de votre plug-in ici."></textarea>    </div>
-  <div class="col-sm-4"> 
       
-      <input class="form-control" name="cat" placeholder="CatÃ©gorie" required="" type="text"><br /><br />      
-      <label for="exampleInputFile">Chemin du plug-in</label>
-    <input type="file" id="exampleInputFile">
-      <button >Enregistrer</button>
-  </div>
-                </div> 
 
-			</div>   
-        <!-- Site footer -->
+      <!-- Site footer -->
       <footer class="footer">
         <p>
-          Projet de fin d'annÃ©e 2014-2015, pour <a href="http://www.esgi.fr/">l'Esgi</a></p>
+          Projet de fin d'année 2014-2015, pour <a href="http://www.esgi.fr/">l'Esgi</a>
           <ul>
             <li>Lafosse Vincent</li>
             <li>Paul Garcia</li>
             <li>Alvin Ondzounga</li>
           </ul>
       </footer>
-		</div><!--/row-->
-      
-      <!-- /container -->
+
+    </div> <!-- /container -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
