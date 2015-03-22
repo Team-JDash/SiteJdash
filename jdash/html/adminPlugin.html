@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="iso-8859-1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="ressources/favicon.ico">
 
-    <title>Jdash web site</title>
+    <title>Administrer Plug-ins Jdash</title>
     
     <!-- Bootstrap core CSS -->
       <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -51,30 +50,34 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron" style="background-color:whitesmoke;">
-        <h3><u><em>Ajouter votre plug-in</em></u></h3>
+        <h3><u><em>Modifier votre plug-in</em></u></h3>
 
-          <p >Cette page permet aux utilisateurs de l'application Jdash de partager leurs plugins Java.</p>
+          <p >Cette page permet aux utilisateurs de l'application Jdash de modifier les descriptions ainsi que les fichiers de leurs plugins Java.</p>
 			   
           <br /><br />
               
+<form action="../scripts/update_plugin.php" method="post">
                 <div class="row">
+
   <div class="col-sm-4">
-      <input class="form-control" name="Nom" placeholder="Nom" required="" type="text"><br /><br />
-      <input class="form-control" name="prenom" placeholder="pr&eacute;nom" type="text" ><br /><br /><br />
-      <input class="form-control" name="email" placeholder="Email" required="" type="email"><br /><br /><br />
-
-					 </div>
-  <div class="col-sm-4"><textarea class="form-control" placeholder="Inserez la description de votre plug-in ici."></textarea>    </div>
-  <div class="col-sm-4"> 
-      
-      <input class="form-control" name="cat" placeholder="Catégorie" required="" type="text"><br /><br />      
-      <label for="exampleInputFile">Chemin du plug-in</label>
-    <input type="file" id="exampleInputFile">
-      <button >Enregistrer</button>
+    <input class="form-control" name="nom" placeholder="nom" required="" type="text"><br/>
+    <input class="form-control" name="categorie" placeholder="Catégorie" required="" type="text">
+       </div>
+  <div class="col-sm-4">
+     <textarea class="form-control" name="description" placeholder="Inserez la description de votre plug-in ici."></textarea>
   </div>
+      
+    
+  <div class="col-sm-4">   
+      <label for="file">Chemin du plug-in</label>
+    <input type="file" accept =".jar" id="file">
+      <button type="submit">Enregistrer</button>
+  </div>
+</div>
                 </div> 
+</form>
 
-			</div>   
+      </div>  
         <!-- Site footer -->
       <footer class="footer">
         <p>

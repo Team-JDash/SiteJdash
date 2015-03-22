@@ -24,9 +24,9 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="jdash.html">Jdash</a></li>
             <li><a href="inscription.html">S'inscrire</a></li>
-            <li class="active"><a href="connexion.html">Se connecter</a></li>
+            <li><a href="connexion.html">Se connecter</a></li>
             <li><a href="download.html">Downloads</a></li>
-            <li><a href="plugin.html">Les plug-ins</a></li>
+            <li class="active"><a href="plugin.html">Les plug-ins</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -43,32 +43,36 @@
 
       <form class="form-horizontal" role="form" method="post">
           
-          <h2 style="margin-left:25%"><u><em>Se connecter</em></u></h2>
+          <h2 style="margin-left:25%"><u><em>V&eacute;rification d'identit&eacute;</em></u></h2>
           <img src="../images/profil.jpg" class="img-rounded" style="margin-left:25%;"><br /><br />
                         <div class="form-group">
+                            <label for="Pseudo" class="col-sm-3 control-label">Pseudo</label>
+                            <div class="col-sm-9">
+                                <input type="Pseud" class="form-control" id="Pseudo" placeholder="Pseudo" required="">
+                            </div>
+                        </div>
+          <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                                <input type="email" class="form-control" id="Email1" placeholder="Email" required="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Mot de passe</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Saisissez votre mot de passe" required="">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-9">
-                                <div class="checkbox">
-                                    <label class="">
-                                        <input type="checkbox" class="">Se souvenir de moi</label>
-                                </div>
+          <div class="form-group">
+                            <label for="inputcodeplugin" class="col-sm-3 control-label">Mot de passe</label>
+                            <div class="col-sm-9">
+                                <input type="codeplugin" class="form-control" id="codeplugin" placeholder="Saisissez votre à nouveau votre mot de passe" required="">
                             </div>
                         </div>
                         <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-sm">Se connecter</button>
-                                <button type="reset" class="btn btn-default btn-sm">Annuler</button>
+                                <button type="button" class="btn"><a href="adminPlugin.html">Valider</a></button>
+
                             </div>
                         </div>
           

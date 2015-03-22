@@ -35,7 +35,7 @@
       <!-- Jumbotron -->
       <div class="jumbotron" style="background-color:whitesmoke;">
           <div class="input-group">
-  <input type="text" list="categ1" class="form-control" placeholder="Cat&eacute;gorie , nomDePlugin, ..." aria-describedby="basic-addon2" id="categ">
+  <input type="text" list="categ1" name="recherche" class="form-control" placeholder="Cat&eacute;gorie , nomDePlugin, ..." aria-describedby="basic-addon2" id="recherche">
   <span class="input-group-addon" id="Span1">Recherche</span>
               <datalist id=categ1 >
                  <option> Jeux </option>   
@@ -49,8 +49,9 @@
 </div>
            
            <br /><br />
+           <div id="results">Result<br/></div>
             <button class="btn btn-primary" type="button"><a href="addPlugin.html">Ajouter vos plug-ins</a></button>
-            <button class="btn btn-primary" type="button"><a href="checkPlugin.html">Modifier vos plug-ins</a></button>
+            <button class="btn btn-primary" type="button"><a href="adminPlugin.html">Modifier vos plug-ins</a></button>
               
       </div>
       
@@ -70,6 +71,37 @@
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    
   </body>
+  <footer>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function() {
+        // détection de la saisie dans le champ de recherche
+        $('#rescherche').keyup( function(){
+          $field = $(this);
+          $('#results').html(''); // on vide les resultats
+          $('#ajax-loader').remove(); // on retire le loader
+       
+          // on commence à traiter à partir du 2ème caractère saisie
+          if( $field.val().length > 1 )
+          {
+            // on envoie la valeur recherché en GET au fichier de traitement
+            $.ajax({
+          type : 'GET', // envoi des données en GET ou POST
+        url : '../scripts/search_plugin.php' , // url du fichier de traitement
+        data : 'q='+$(this).val() , // données à envoyer en  GET ou POST
+        beforeSend : function() { // traitements JS à faire AVANT l'envoi
+          $field.after('<img src="ajax-loader.gif" alt="loader" id="ajax-loader" />'); // ajout d'un loader pour signifier l'action
+        },
+        success : function(data){ // traitements JS à faire APRES le retour d'ajax-search.php
+          $('#ajax-loader').remove(); // on enleve le loader
+          $('#results').html(data); // affichage des résultats dans le bloc
+        }
+            });
+          }   
+        });
+      });
+    </script>
+  </footer>
 </html>

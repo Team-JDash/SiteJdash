@@ -53,13 +53,14 @@
 			   
 			<hr>    
 			<div class="col-sm-8">
-			<form role="form" method="post">
+
+			<form role="form" method="post" action="../scripts/email.php">
 				<div class="row form-group">
 					<div class="col-xs-3">
-						<input class="form-control" id="firstName" name="firstName" placeholder="Nom" required="" type="text">
+						<input class="form-control" id="firstName" name="nom" placeholder="Nom" required="" type="text">
 					</div>            
 					<div class="col-xs-3">                
-						<input class="form-control" id="middleName" name="firstName" placeholder="Pr&eacute;nom(s)" required="" type="text">            
+						<input class="form-control" id="middleName" name="prenom" placeholder="Pr&eacute;nom(s)" required="" type="text">            
 					</div>
 					<div class="col-xs-4">
 						<input class="form-control" id="lastName" name="entreprise" placeholder="Votre entreprise" required="" type="text">            
@@ -70,17 +71,17 @@
 						<input class="form-control" name="email" placeholder="Email" required="" type="email">
 					</div>
 					<div class="col-xs-5">                
-						<input class="form-control" name="phone" placeholder="Num&eacute;ro" required="" type="email">
+						<input class="form-control" name="telephone" placeholder="Num&eacute;ro" required="" type="tel">
 					</div>        
 				</div>        
 				<div class="row form-group">            
 					<div class="col-xs-10">                
-						<input class="form-control" placeholder="URL Site Web" required="" type="homepage">
+						<input class="form-control" placeholder="URL Site Web" name="site_web" required="" type="homepage">
 					</div>        
 				</div>
 				<div class="row form-group">            
 					<div class="col-xs-10">                
-						<textarea class="form-control" rows="5">Laissez votre message ici</textarea>
+						<textarea class="form-control" rows="5" name="message" placeholder="Laissez votre message ici"></textarea>
 					</div>        
 				</div>
 				        
@@ -90,6 +91,7 @@
 					</div>        
 				</div>
 			</form>
+
 			</div>    
 			<div class="col-sm-3 pull-right"> 
 				<address>          
@@ -98,11 +100,7 @@
 						242 rue Faubourg st antoine, 75012<br>          
 					</span>          
 					Telephone: 01 23 45 67 89
-				</address> 
-				<address>          
-					<strong>Contacts email</strong><br>
-					<a href="mailto:#">contact@onasus.com</a>
-				</address>     
+				</address> 				   
 			</div>
 		</div><!--/row-->
       </div>
