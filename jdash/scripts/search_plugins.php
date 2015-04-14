@@ -4,10 +4,10 @@ require 'class/Functions.php';
 print_r($_GET);
 
 $search_app = new Functions;
-$search_app->set_name_application($_GET["q"]);
-print_r($search_app->get_name_application());
+$search_app->set_name_application($_GET["search"]);
+//print_r($search_app->get_name_application());
 
-print_r($search_app->find_application());
+print_r(json_encode($search_app->find_application()));
 
 
 

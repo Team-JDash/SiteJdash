@@ -19,13 +19,18 @@ $user_function->set_user_email($_POST['email']);
 // print_r( $user_function->get_user_id() );
 
 
-if ($user_function->get_user_id() == null) {
-	echo "L'utilisateur ".$_POST['pseudo']." existe d&eacute;j&agrave;";
+if ($user_function->get_user_id() != null) {
+	
+	$res["msg"] = "L'utilisateur ".$_POST['pseudo']." existe d&eacute;j&agrave;";
+	$res["code_status"] = 1;
+
 }else{
 	
-	if( !($_POST['password'] == $_POST['password2']) )
+	if( !($_POST['password'] == $_POST['password_bis']) )
 	{
-		echo 'le mot de passe n est pas correct';
+		
+		$res["msg"] = 'le mot de passe n est pas correct';
+		$res["code_status"] = 1;
 	}
 	else
 	{
@@ -38,9 +43,14 @@ if ($user_function->get_user_id() == null) {
 		$_SESSION['id'] = $user_function->get_user_id();
 		$_SESSION['pseudo'] = $user_function->get_user_pseudo();
 		$_SESSION['email'] = $user_function->get_user_email();
-		echo "<h1>Inscription effectu&eacute;<br /></h1>";
-		echo "<a href='../html'>Veuillez cliquer sur le liens si la redirection ne fonctionne pas.</a>";
 		
+		
+		$res["session"] = $_SESSION;
+		$res["msg"] = "Inscription effectu&eacute";
+		$res["code_status"] = 0;
+		//echo "<a href='../html'>Veuillez cliquer sur le liens si la redirection ne fonctionne pas.</a>";
 	}
 
 }
+
+print_r(json_encode($res));
