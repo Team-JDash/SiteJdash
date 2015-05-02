@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+    <form id="monForm" action="./login.php" method="post">
+        <div>
+            <label for="email">Email :</label>
+            <input type="text" id="email" name="email" />
+        </div>
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" id="password" name="password"/>
+        </div>
+          <input type="submit" id="envoyer" value="Envoyer" />
+    </form>
+
+
+
+
+
+    <script>
+    $(document).ready(function() {
+      // Lorsque je soumets le formulaire
+      $('#monForm').on('submit', function(e) {
+          e.preventDefault(); // J'empêche le comportement par défaut du navigateur, c-à-d de soumettre le formulaire
+
+          var $this = $(this); // L'objet jQuery du formulaire
+
+          // Je récupère les valeurs
+          var pseudo = $('#email').val();
+          var mail = $('#password').val();
+
+          // Je vérifie une première fois pour ne pas lancer la requête HTTP
+          // si je sais que mon PHP renverra une erreur
+          if(pseudo === '' || mail === '') {
+              alert('Les champs doivent êtres remplis');
+          } else {
+              // Envoi de la requête HTTP en mode asynchrone
+              $.ajax({
+                  url: $this.attr('action'), // Le nom du fichier indiqué dans le formulaire
+                  type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
+                  data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+                  dataType: 'json', // JSON
+                  success: function(json) {
+                    $.each(json, function(key, value) {
+                      if(key == "msg")
+                        alert(value);
+                    });
+
+
+                  }
+              });
+          }
+      });
+  });
+
+    </script>
+</body>
+</html>
