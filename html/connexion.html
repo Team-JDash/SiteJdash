@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="iso-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jdash">
+    <meta name="author" content="">
+    <link rel="icon" href="ressources/favicon.ico">
+
+    <title>Jdash web site</title>
+      <link href="../css/bootstrap.min.css" rel="stylesheet" />
+      <link href="../css/justified-nav.css" rel="stylesheet" />
+      <link href="../css/connexion.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <div class="container">
+        <!-- CONNEXION BAAAAR -->
+      <div class="masthead">
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="jdash.html">Jdash</a></li>
+            <li><a href="inscription.html">S'inscrire</a></li>
+            <li class="active"><a href="connexion.html">Se connecter</a></li>
+            <li><a href="download.html">Downloads</a></li>
+            <li><a href="plugin.html">Les plug-ins</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+        <!-- CONNEXION BAAAAR -->
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color : whitesmoke;" >
+      <div class="row">
+        <div class="col-sm-10">
+
+          <form class="form-horizontal" id="loginForm" role="form" method="post" action="../scripts/login.php">
+
+            <h2 style="margin-left:25%"><u><em>Se connecter</em></u></h2>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">Mot de passe</label>
+                <div class="col-sm-9">
+                    <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                </div>
+            </div>
+            <div class="form-group last">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-success btn-sm">Se connecter</button>
+                    <button type="reset" class="btn btn-default btn-sm">Annuler</button>
+                </div>
+            </div>
+          </form>
+			   </div>
+       </div>
+      </div>
+
+      
+
+
+
+    </div> <!-- /container -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+  </body>
+</html>
