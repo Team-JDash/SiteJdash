@@ -5,10 +5,7 @@ require_once('class/Plugin.php');
 
  if (!isset($_SESSION)) 
  {
- 	print_r($_SESSION);
- 	print_r($_POST);
-	print_r($_FILES);
-
+ 	
 	if(!isset($_SESSION)){
 		echo "<a href='../html/connexion.html'>Merci de vous connecter.</a>";
 	}

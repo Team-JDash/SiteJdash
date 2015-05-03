@@ -13,11 +13,21 @@ require_once('Connection_BDD.php');
 */
 class Functions extends Connection_BDD{
 
-	private $name_bdd = parent::get_bdd_name();
+	private $name_bdd;
 	private $name_table = "plugin";
 
 	private $search_application;
 	private $search_categorie;
+
+
+	function __construct()
+	{
+		if ($this->name_bdd == '') {
+			$this->name_bdd = parent::get_bdd_name();
+		}		
+	}
+
+
 
 	/**
 	* Attribut la valeur de recherche pour l'application
@@ -68,7 +78,7 @@ class Functions extends Connection_BDD{
 			$stmp->execute();
 
 			$result_row = $stmp->fetch();
-			print_r($result_row);
+			// print_r($result_row);
 			return $result_row;
 
 			close_connection_bdd($instance_bdd);

@@ -175,5 +175,24 @@ class Plugin extends Connection_BDD{
 			exit('<b>Catched exception( cf. class User) at line '. $e->getLine() .' :</b> '. $e->getMessage());
 		}
 	}
+
+
+	/**
+	* Ajoute un nouvelle catégorie si elle n'existe pas dans la BDD
+	*/
+	public function new_categorie(){
+		try {
+			$bdh = parent::connection_bdd();
+
+			$stmp = $bdh->prepare('INSERT INTO categorie (`NoCategorie`, `nom`) VALUES (NULL, :name)');
+			
+			$stmp->bindParam(':name', $this->plugin_categorie);
+			
+			$stmp->execute();
+			parent::close_connection_bdd($bdh);
+		} catch( Execption $e){
+			exit('<b>Catched exception( cf. class User) at line '. $e->getLine() .' :</b> '. $e->getMessage());
+		}
+	}
 }
 

@@ -10,14 +10,6 @@ $user_function->set_user_firstName($_POST['prenom']);
 $user_function->set_user_lastName($_POST['nom']);
 $user_funtion->set_user_token($_POST['token']);
 
-// print_r( "pseudo: ".$user_function->get_user_pseudo() );
-// print_r( "email: ".$user_function->get_user_email() );
-// print_r( "password : ".$user_function->get_user_password() );
-// print_r( "id : ".$user_function->get_user_id() );
-// print_r( "firstname : ".$user_function->get_user_firstName() );
-// print_r( "lastname : ".$user_function->get_user_lastName() );
-// print_r( "token : ".$user_function->get_user_token() );
-// echo "<br/>";
 
 if ( ($user_function->user_exist()) == TRUE) {
 
@@ -56,6 +48,6 @@ if ( ($user_function->user_exist()) == TRUE) {
 
 }
 
-print_r(json_encode($res));
+json_encode($res);
 
 ?>

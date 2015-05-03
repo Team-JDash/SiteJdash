@@ -1,0 +1,118 @@
+<?php
+require_once('../scripts/class/MySession.php');
+$session = new MySession();
+
+);
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jdash">
+    <meta name="author" content="">
+    <link rel="icon" href="ressources/favicon.ico">
+
+    <title>Jdash</title>
+
+      <link href="../css/bootstrap.min.css" rel="stylesheet" />
+      <link href="../css/justified-nav.css" rel="stylesheet" />
+      <link href="../css/jdash.css" rel="stylesheet" />
+
+  </head>
+  <body>
+
+    <div class="container">
+        <!-- CONNEXION BAAAAR -->
+      <div class="masthead">
+        <nav>
+          <ul class="nav nav-justified">
+            <li><a href="index.php">Accueil</a></li>
+            <li class="active"><a href="jdash.php">Jdash</a></li>
+            <li><a href="inscription.php">S'inscrire</a></li>
+            <li><a href="connexion.php">Se connecter</a></li>
+            <li><a href="download.php">Downloads</a></li>
+            <li><a href="plugin.php">Les plug-ins</a></li>
+            <li><a href="contact.php">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+        <!-- CONNEXION BAAAAR -->
+
+
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color:whitesmoke;">
+
+          <h3><u>Qu'est ce que Jdash?</u></h3>
+          <hr />
+    <p>
+        <h4><u><em>Pr&eacute;sentation</em></u></h4>
+
+          Notre projet Jdash, est un projet qui a été développé dans le but de proposer à son utilisateur un outil lui permettant de regrouper différentes sources d'informations et/ou applications dont il pourrait avoir besoin dans un seul et unique endroit.<br /><br />
+        L'application se présentera comme un Dashboard.
+        <ul>
+          <li>
+              <img src="../images/screen3.jpg" width="500" height="300" alt="screen_home_jdash"/>
+          </li>
+        </ul>
+       
+        
+        <br />
+
+Une interface de ce type permet de regrouper aisément et agréablement les différentes sources/types d'informations que l'utilisateur consulte régulièrement.
+
+Jdash contiendra par défaut certaines fonctionnalités de bases, comme un launcher d'applications.
+
+        <h4><u><em>Où le télécharger ?</em></u></h4>
+
+        L'application Jdash est gratuite et disponible dans l'onglet "<a href="download.php">Downloads</a>".
+    </p>
+
+    <p>
+        <h4>Descriptif Fonctionnel.</h4>
+
+    <ul>
+        <li>Application dite lourde en Java.
+            L'application utilise des "tuiles" pour intégrer les différents plugins préalablement téléchargé et intégré à Jdash.
+        </li>
+        <li>
+          Par défaut Jdash proposera 2 plugins intégré (horloge, calculatrice) permettant de tester le dashboard. Le reste des plugins sont disponibles via le store.
+        </li>
+    </ul>
+        </p>
+
+    <p><h4>Quel est l'intérêt de Jdash ?</h4>
+
+        L'intérêt de Jdash est que chaque utilisateur peut contribuer à son l'évolution. Si vous êtes un développeur en java et que vous souhaitez rajouter des fonctionnalitées à votre dashboard, vous le pouvez, ainsi proposer à la communauté votre plugin. Jdash vous encourage à faire évoluer l'outil et facilitera la mise en avant de votre plugin disponible dans notre store.
+    </p>
+
+    <p><h4>Capture d'écrants:</h4>
+      <ul>
+          <li>
+              <img src="../images/screen1.jpg" />
+          </li>
+          <li>
+            <img src="../images/screen2.jpg" />
+          </li>
+          <li>
+            <img src="../images/screen3.jpg" />
+          </li>
+        </ul>
+    </p>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  </body>
+
+</html>

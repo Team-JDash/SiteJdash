@@ -1,0 +1,22 @@
+language: php
+
+php:
+  	- 5.4
+	- 5.6
+	- 5.5.12
+
+before_script:
+	-sh -c "mysql -e `CREATE DATABASE jdash;`"
+	-sh -c "mysql jdash.sql"
+	-echo "<?php
+		class DATABASE_CONFIG {
+		public \$test = array(
+			'host' => '127.0.0.1',
+			'dbname' => 'jdash',
+			'username' => 'travis',
+			'password' => ''
+		);
+		}" > scripts/class/Config/database.php
+
+script:
+	phpunit Jdash/testsUnitaire/MainTests.php

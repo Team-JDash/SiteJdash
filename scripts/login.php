@@ -1,28 +1,29 @@
 <?php
 
 require_once('class/User.php');
+require_once('class/MySession.php');
+session_start();
 
 
-// print_r($_POST);
+
 
 $user_function = new User;
 $user_function->set_user_email($_POST['email']);
 $user_function->set_user_password($_POST['password']);
 
-// print_r( $user_function->get_user_email() );
-// print_r( $user_function->get_user_password() );
+
 
 
 
 
 if( !$user_function->user_exist() ) {
 	$res["msg"] = "L'utilisateur n'existe pas, veuillez créer un nouveau compte";
+
 }else{
 
-	if( isset($_SESSION) )
-	{
-		session_start();
-	}
+	$session = new MySession();		
+	
+
 	$_SESSION['id'] = $user_function->get_user_id();
 	$_SESSION['email'] = $user_function->get_user_email();
 	$_SESSION['status'] = true;
@@ -30,7 +31,15 @@ if( !$user_function->user_exist() ) {
 
 	$res["code_status"] = 0;
 	$res["msg"] = "vous etes logué";
-	$res["session"] = $_SESSION;
+	$res[$user_function->get_user_token()] = $_SESSION;
+
+	
+
 }
 
-print_r(json_encode($res));
+json_encode($res);
+
+
+echo "<script type='text/javascript'>alert('".$res['msg']."')</script>";
+header('Location: ../');
+exit();

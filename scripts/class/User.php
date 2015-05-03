@@ -27,7 +27,7 @@ class User extends Connection_BDD{
 	private $user_id_;
 	private $user_firstName_;
 	private $user_lastName_;
-	private $token_;
+	private $token_ = 0;
 
 
 
@@ -182,6 +182,8 @@ class User extends Connection_BDD{
 	}
 
 	public function get_user_token(){
+		if( $this->token_ == 0 )
+			self::find_user_profil();
 		return $this->token_;
 	}
 
@@ -268,7 +270,7 @@ class User extends Connection_BDD{
 			$this->user_firstName_ = $res['prenom'];
 			$this->user_lastName_ = $res['nom'];
 			
-
+			
 
 		} catch( PDOExecption $e){
 			exit('<b>Catched exception( cf. class User) at line '. $e->getLine() .' :</b> '. $e->getMessage());
@@ -333,31 +335,6 @@ class User extends Connection_BDD{
 
 
 
-	/**
-	* Demarre une nouvelle session
-	*/
-	public function start_session(){
-		if( isset($_SESSION) ){
-			session_start();
-		}
-	}
-
-	/**
-	* Arrete la session courante
-	*/
-	public function user_logout(){
-		if( isset($_SESSION) ){
-			$_SESSION[$this->token_] = null;
-		}
-	}
-
-	public function get_user_session(){
-		return $_SESSION[$this->token_];
-	}
-
-	public function add_session($id, $val){
-		$_SESSION[$this->token_][$id] = $val;
-	}
 
 
 }

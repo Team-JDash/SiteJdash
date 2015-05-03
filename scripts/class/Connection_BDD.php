@@ -1,5 +1,7 @@
 <?php
 
+require_once('Config/database.php');
+
 /**
 * Class Connection_BDD
 *	Permet de fixer la methode de connection avec les principaux parametres
@@ -7,20 +9,30 @@
 *	+connection_bdd()
 *	+close_connection_bdd()
 */
-class Connection_BDD{
+/**
+* 
+*/
+class Connection_BDD extends DATABASE_CONFIG{
 
-	private $servername_ = "sql2.olympe.in";
-	private $dbname_ = "u4kztq8m";
-	private $username_ = "u4kztq8m";
-	private $password_ = "123";
+	private $host_ ;
+	private $dbname_ ;
+	private $username_;
+	private $password_ ;
 
+	/**
+	* Récupère les infos depuis le fichier Config/database.php
+	*/
+	function __construct()
+	{
+		$config = parent::__construct();
+		// print_r($config);
+		$this->host_ = $config['host'];
+		$this->dbname_ = $config['dbname'];
+		$this->username_ = $config['username'];
+		$this->password_ = $config['password'];
+	}
 
-	// private $servername_ = "127.0.0.1";
-	// private $dbname_ = "jdash";
-	// private $username_ = "root";
-	// private $password_ = "";
-	// private $port_serveur = "3306";
-
+	
 	/**
 	* Demarre une nouvelle instance de connection BDD
 	*/
@@ -28,7 +40,7 @@ class Connection_BDD{
 		
 		
 		try {
-			$dbh = new PDO("mysql:host=".$this->servername_.";dbname=".$this->dbname_."", $this->username_, $this->password_);
+			$dbh = new PDO("mysql:host=".$this->host_.";dbname=".$this->dbname_."", $this->username_, $this->password_);
 			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		} catch (PDOException $e) {
 		 	die("Impossible de se connecter: " . $e->getMessage());
