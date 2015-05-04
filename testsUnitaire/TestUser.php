@@ -33,8 +33,6 @@ class TestUser extends PHPUnit_Framework_TestCase
 		$user->set_user_password($this->profil_user['password']);
 		$user->set_user_firstName($this->profil_user['firstName']);
 		$user->set_user_lastName($this->profil_user['lastName']);
-		//attribut automatiquement la valeur, mais la c est NULL il existe pas encors
-		$user->set_user_id();
 		$user->set_user_token($this->profil_user['token']);
 
     }
