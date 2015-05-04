@@ -26,10 +26,11 @@ before_script:
   - mysql -e "create database IF NOT EXISTS jdash;" -uroot;
   - pwd
   - mysql -uroot jdash < jdash.sql 
+  - cd testsUnitaire
   
 
 
 
 # launch script travis
 script:
-  phpunit Jdash/testsUnitaire/MainTests.php
+  phpunit MainTests.php
