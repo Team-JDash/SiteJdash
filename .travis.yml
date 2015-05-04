@@ -23,9 +23,9 @@ env:
 
 # execute any number of scripts before the test run, custom env's are available as variables
 before_script:
-  - mysql -e "create database IF NOT EXISTS jdash;" -uroot -p123;
+  - mysql -e "create database IF NOT EXISTS jdash;" -uroot -p;
   - pwd
-  - mysql -uroot -p123; 
+  - mysql -uroot -p; 
   
 
 
