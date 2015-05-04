@@ -28,13 +28,13 @@ class TestUser extends PHPUnit_Framework_TestCase
 		public function testSetteur()
     {
         $user = new User();
-        $user->set_user_pseudo($this->profil_user['pseudo']);
-        $user->set_user_email($this->profil_user['email']);
-		$user->set_user_password($this->profil_user['password']);
-		$user->set_user_firstName($this->profil_user['firstName']);
-		$user->set_user_lastName($this->profil_user['lastName']);
-		$user->set_user_token($this->profil_user['token']);
-		
+        $user->set_user_pseudo($this->profil_user_pseudo['pseudo']);
+        $user->set_user_email($this->profil_user_email['email']);
+		$user->set_user_password($this->profil_user_password['password']);
+		$user->set_user_firstName($this->profil_user_firstName['firstName']);
+		$user->set_user_lastName($this->profil_user_lastName['lastName']);
+		$user->set_user_token($this->profil_user_token['token']);
+		return $user;
     }
 
     /**
@@ -42,13 +42,7 @@ class TestUser extends PHPUnit_Framework_TestCase
      */
 	public function testGetteur()
 	{
-		$user = new User();
-        $user->set_user_pseudo($this->profil_user['pseudo']);
-        $user->set_user_email($this->profil_user['email']);
-		$user->set_user_password($this->profil_user['password']);
-		$user->set_user_firstName($this->profil_user['firstName']);
-		$user->set_user_lastName($this->profil_user['lastName']);
-		$user->set_user_token($this->profil_user['token']);
+		$user = self::testSetteur();
 		print_r("tab:".$this->profil_user['pseudo']);
 		print_r("get:".$user->get_user_pseudo());
 		$this->assertEquals( $this->profil_user['pseudo'] , $user->get_user_pseudo() );
