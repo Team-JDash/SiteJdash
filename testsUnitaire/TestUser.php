@@ -34,7 +34,7 @@ class TestUser extends PHPUnit_Framework_TestCase
 		$user->set_user_firstName($this->profil_user['firstName']);
 		$user->set_user_lastName($this->profil_user['lastName']);
 		$user->set_user_token($this->profil_user['token']);
-		return $user;
+		
     }
 
     /**
@@ -42,7 +42,13 @@ class TestUser extends PHPUnit_Framework_TestCase
      */
 	public function testGetteur()
 	{
-		$user = self::testSetteur();
+		$user = new User();
+        $user->set_user_pseudo($this->profil_user['pseudo']);
+        $user->set_user_email($this->profil_user['email']);
+		$user->set_user_password($this->profil_user['password']);
+		$user->set_user_firstName($this->profil_user['firstName']);
+		$user->set_user_lastName($this->profil_user['lastName']);
+		$user->set_user_token($this->profil_user['token']);
 
 		$this->assertEquals( $this->profil_user['pseudo'] , $user->get_user_pseudo() );
 		$this->assertEquals( $this->profil_user['email'] , $user->get_user_email() );
