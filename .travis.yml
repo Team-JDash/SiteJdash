@@ -25,8 +25,7 @@ env:
 before_script:
   - mysql -e "create database IF NOT EXISTS jdash;" -uroot;
   - pwd
-  - mysql --user=root --password=null -p jdash < jdash.sql
-  - mysql -u root --password="" -p jdash < jdash.sql
+  - mysql -u root -p jdash < jdash.sql;
   
 
 
