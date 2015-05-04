@@ -49,8 +49,8 @@ class TestUser extends PHPUnit_Framework_TestCase
 		$user->set_user_firstName($this->profil_user['firstName']);
 		$user->set_user_lastName($this->profil_user['lastName']);
 		$user->set_user_token($this->profil_user['token']);
-		print_r($this->profil_user['pseudo']);
-		print_r($user->get_user_pseudo());
+		print_r("tab:".$this->profil_user['pseudo']);
+		print_r("get:".$user->get_user_pseudo());
 		$this->assertEquals( $this->profil_user['pseudo'] , $user->get_user_pseudo() );
 		$this->assertEquals( $this->profil_user['email'] , $user->get_user_email() );
 		$this->assertEquals( $this->profil_user['password'] , $user->get_user_password() );
