@@ -33,4 +33,4 @@ before_script:
 
 # launch script travis
 script:
-  phpunit MainTests.php
+  phpunit TestUser.php
