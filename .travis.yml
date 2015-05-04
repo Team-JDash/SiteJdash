@@ -25,7 +25,7 @@ env:
 before_script:
   - mysql -e "create database IF NOT EXISTS jdash;" -uroot;
   - pwd
-  - mysql -u root -p jdash < jdash.sql;
+  - mysql -e -u root -p jdash < jdash.sql;
   
 
 
